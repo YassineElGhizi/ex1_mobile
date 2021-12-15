@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.*;
-import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,24 +29,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateDatabase(View v){
-        ++tmp;
-        System.out.println("tmp = " + tmp);
-        Map<String , Float> reccord = new HashMap<String , Float>();
+//        Map<String , Float> reccord = new HashMap<String , Float>();
         String l = "";
         l = label.getText().toString();
-        Float p = Float.parseFloat(
-                price.getText().toString()
-        );
-        System.out.println("label = " + l + " price = " + p);
-        reccord.put(l,p);
-        System.out.println("recored = " + reccord);
-        database.add(reccord);
-//        reccord.clear();
-        for (int i =0 ; i < database.size(); i++){
-            System.out.println("i = " + i + " -- " + database.get(i));
-        }
+        String p = price.getText().toString();
+//        Float p = Float.parseFloat(
+//                price.getText().toString()
+//        );
+//        System.out.println("label = " + l + " price = " + p);
+//        reccord.put(l,p);
+//        System.out.println("recored = " + reccord);
+//        database.add(reccord);
+        database.add(l + "       " + p);
+//        for (int i =0 ; i < database.size(); i++){
+//            System.out.println("i = " + i + " -- " + database.get(i));
+//        }
+        System.out.println("database = " + database);
         ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1 , database);
         listItems.setAdapter(ad);
-
     }
 }
